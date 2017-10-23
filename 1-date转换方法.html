@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //以下获取的是从1970年1月1日到此刻的所有毫秒
+    
+    console.log(+new Date());
+    console.log(Date.now());
+    var date = new Date();
+    console.log(date.valueOf());
+    console.log(date.getTime());
+
+    //以下是可以设置初始时间的
+    console.log(Date.parse("2017-1-1"));
+
+    </script>
+</body>
+</html>

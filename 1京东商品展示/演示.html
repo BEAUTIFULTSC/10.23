@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #box {
+      width: 360px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+
+    #box img {
+      vertical-align: middle;
+    }
+
+    #box ul {
+      overflow: hidden;
+      border-top: 1px solid #ccc;
+    }
+
+    #box li {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <!--上面显示的大图-->
+    <img id="bigImg" src="images/01big.jpg" alt="" />
+    <ul id="imgs">
+      <!--下面操作的小图片-->
+      <li>
+        <img src="images/01.jpg" alt="1" />
+      </li>
+      <li>
+        <img src="images/02.jpg" alt="2" />
+      </li>
+      <li>
+        <img src="images/03.jpg" alt="3" />
+      </li>
+      <li>
+        <img src="images/04.jpg" alt="4" />
+      </li>
+      <li>
+        <img src="images/05.jpg" alt="5" />
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    //分析要设置的大图地址：
+    //"images/01big.jpg"
+    //"images/02big.jpg"
+    //"images/03big.jpg"
+    //"images/04big.jpg"
+    //"images/05big.jpg"
+
+    //通过观察我们发现不同的图片改变的只有中间的数 12345
+    var bigImg = document.getElementById("bigImg");
+    var imgs = document.getElementById("imgs");
+    var img = imgs.getElementsByTagName("img");
+    //使用以下三种方式：
+    //1 使用标签的行内自定义属性count
+    // function fun(){
+    //     bigImg.src = "images/0"+this.getAttribute("count")+"big.jpg"
+    //   }
+    // for(var i=0;i<img.length;i++){
+    //   img[i].setAttribute("count",i+1);
+    //   img[i].onclick = fun;
+
+    // }
+    //2 使用DOM对象的自定义属性count
+    // function fun(){
+    //     bigImg.src = "images/0"+this.count+"big.jpg"
+    //   }
+    // for(var i=0;i<img.length;i++){
+    //   img[i].count = i+1;
+    //   img[i].onclick = fun;
+
+    // }
+    //3 使用标签自带属性alt的值
+    function fun() {
+      bigImg.src = "images/0" + this.alt + "big.jpg"
+    }
+    for (var i = 0; i < img.length; i++) {
+      
+      img[i].onclick = fun;
+
+    }
+  </script>
+
+
+  </script>
+</body>
+
+</html>

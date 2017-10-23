@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // sort方法
+    var arr = [2,5,4,1,6,7,8];
+    // arr.sort(function(a,b){
+    //     return a-b;
+    // })
+    // console.log(arr);
+    // arr.sort(function(a,b){
+    //     return b-a;
+    // })
+    
+    //书写sort原理
+    function sort(arr,fn){
+        var j,temp;
+        for(var i=0;i<arr.length-1;i++){
+            for(j=0;j<arr.length-1-i;j++){
+                if(fn(arr[j],arr[j+1]) > 0){
+                   temp =  arr[j];
+                   arr[j] = arr[j+1];
+                   arr[j+1] = temp;
+                }
+            }
+        }
+    }
+    sort(arr,function(a,b){
+        // return a-b;
+        return b-a;
+    })
+    console.log(arr);
+    </script>
+</body>
+</html>

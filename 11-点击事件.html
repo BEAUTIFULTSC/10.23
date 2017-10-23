@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+              margin: 0;
+              padding: 0;
+            }
+            
+            #box {
+              width: 100px;
+              height: 100px;
+              background-color: red;
+            }
+          </style>
+</head>
+<body>
+    <!-- <button id="btn">按钮</button>
+    <script>
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function(){
+        alert("你好");
+    }
+    
+    
+    </script> -->
+
+
+    <!-- <button>改变宽度</button>
+    <button>改变高度</button>
+    <button>改变背景色</button>
+    <button>改变文字</button>
+    <div id="box"></div>
+    <script>
+    var btn = document.getElementsByTagName("button");
+    var box = document.getElementById("box");
+    btn[0].onclick = function(){
+        box.style.width = "200px";
+
+    }
+    btn[1].onclick = function(){
+        box.style.height = "200px";
+        
+    }
+    btn[2].onclick = function(){
+        box.style.backgroundColor = "pink";
+        
+    }
+    btn[3].onclick = function(){
+        box.innerHTML = "我美吗";
+        
+    }
+    </script> -->
+
+
+    <!-- <img id="pic" src="./images/111.jpg" alt="">
+    <button id="btn1">切换为图片2</button>
+    <button id="btn2">切换为图片1</button>
+    <script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var pic = document.getElementById("pic");
+    btn1.onclick = function(){
+        pic.src = "./images/222.jpg" ;
+    }
+    btn2.onclick = function(){
+        pic.src = "./images/111.jpg" ;
+    } 
+    </script>-->
+
+
+
+    <img id="pic" src="./images/111.jpg" alt="">
+    <button id="btn">切换为图片</button>
+    <script>
+    var pic = document.getElementById("pic");
+    var btn = document.getElementById("btn");
+    var flag = true;
+    btn.onclick = function(){
+        if(flag){
+            pic.src = "./images/111.jpg";
+            flag = false;
+        }else {
+            pic.src = "./images/222.jpg";
+            flag = true;
+        }
+    }
+    
+    
+    </script>
+
+
+    
+    
+   
+    
+</body>
+</html>
